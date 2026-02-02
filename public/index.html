@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI News Pusher - Daily AI news delivered to your WhatsApp every morning at 8 AM">
+    <meta name="theme-color" content="#25D366">
+    <title>AI News Pusher - Daily AI Updates on WhatsApp</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🤖</span>
+                <h1>AI News Pusher</h1>
+            </div>
+            <p class="tagline">Daily AI Updates Delivered to Your WhatsApp</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Stay Updated with AI</h2>
+                <p>Get the latest artificial intelligence news and developments delivered straight to your WhatsApp every morning at 8 AM.</p>
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon">📰</span>
+                        <span>Curated AI News</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⏰</span>
+                        <span>Daily at 8 AM</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📱</span>
+                        <span>WhatsApp Delivery</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="chat-bubble received">
+                            <p class="chat-time">8:00 AM</p>
+                            <p class="chat-text">🗞️ Daily AI News Update</p>
+                            <p class="chat-preview">5 articles from the last 24 hours...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="subscribe-section" id="subscribe">
+            <div class="card">
+                <h3>Subscribe Now</h3>
+                <p>Enter your WhatsApp number to receive daily AI news updates</p>
+                <form id="subscribeForm" class="subscribe-form">
+                    <div class="input-group">
+                        <span class="input-prefix">+</span>
+                        <input 
+                            type="tel" 
+                            id="phoneInput" 
+                            placeholder="1234567890" 
+                            required
+                            pattern="[1-9]\d{1,14}"
+                            title="Please enter your phone number in E.164 format (e.g., 1234567890)"
+                        >
+                    </div>
+                    <p class="input-hint">Include country code without the + sign</p>
+                    <button type="submit" class="btn btn-primary" id="subscribeBtn">
+                        <span class="btn-text">Subscribe</span>
+                        <span class="btn-loading" style="display: none;">Subscribing...</span>
+                    </button>
+                </form>
+                <div id="subscribeMessage" class="message" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Status Section -->
+        <section class="status-section">
+            <div class="status-card">
+                <div class="status-item">
+                    <span class="status-label">Server Status</span>
+                    <span class="status-value" id="serverStatus">Checking...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Subscribers</span>
+                    <span class="status-value" id="subscriberCount">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Next Push</span>
+                    <span class="status-value" id="nextPush">8:00 AM</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Preview Section -->
+        <section class="news-section" id="news">
+            <h3>Latest AI News</h3>
+            <p>Recent articles that will be included in tomorrow's push</p>
+            <div id="newsList" class="news-list">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Fetching latest AI news...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unsubscribe Section -->
+        <section class="unsubscribe-section" id="unsubscribe">
+            <div class="card">
+                <h3>Unsubscribe</h3>
+                <p>No longer want to receive AI news updates?</p>
+                <form id="unsubscribeForm" class="subscribe-form">
+                    <div class="input-group">
+                        <span class="input-prefix">+</span>
+                        <input 
+                            type="tel" 
+                            id="unsubPhoneInput" 
+                            placeholder="1234567890" 
+                            required
+                            pattern="[1-9]\d{1,14}"
+                            title="Please enter your phone number in E.164 format"
+                        >
+                    <button type="submit" class="btn btn-secondary" id="unsubscribeBtn">
+                        <span class="btn-text">Unsubscribe</span>
+                        <span class="btn-loading" style="display: none;">Unsubscribing...</span>
+                    </button>
+                </form>
+                <div id="unsubscribeMessage" class="message" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🤖 AI News Pusher - Daily AI News Delivered</p>
+            <p class="footer-note">Powered by AI | News from TechCrunch, MIT Technology Review & VentureBeat</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
